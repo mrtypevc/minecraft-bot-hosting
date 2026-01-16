@@ -1,0 +1,108 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #020617, #020617);
+  color:#e5e7eb;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.page-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.page-title h1{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.page-title p{
+  color:#94a3b8;
+}
+
+.card{
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:16px;
+  padding:26px;
+  margin-bottom:28px;
+}
+
+.card h2{
+  margin-top:0;
+  font-size:20px;
+}
+
+.card p{
+  color:#94a3b8;
+}
+
+.center{
+  text-align:center;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 20px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.btn.outline{
+  background:transparent;
+  border:1px solid #2563eb;
+}
+
+.code-box{
+  position:relative;
+  margin-top:14px;
+}
+
+.code-box textarea{
+  width:100%;
+  background:#020617;
+  color:#e5e7eb;
+  border:1px solid #1e293b;
+  border-radius:12px;
+  padding:14px;
+  resize:none;
+  font-family:monospace;
+  font-size:13px;
+}
+
+.code-box.big textarea{
+  height:260px;
+}
+
+.code-box button{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#1e293b;
+  border:none;
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#64748b;
+  font-size:13px;
+}

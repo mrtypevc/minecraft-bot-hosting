@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Bot Installer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mc-style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="page-title">
+    <h1>Minecraft Bot Installer</h1>
+    <p>Run a Minecraft bot easily using Termux</p>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="card">
+    <h2>Step 1 — Install Termux</h2>
+    <p>Use only the official Termux app.</p>
+    <a class="btn" href="https://github.com/termux/termux-app" target="_blank">
+      Download Termux
+    </a>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="card">
+    <h2>Step 2 — Setup Environment</h2>
+
+    <div class="code-box">
+      <textarea readonly>pkg update && pkg upgrade -y</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+
+    <div class="code-box">
+      <textarea readonly>pkg install nodejs git nano -y</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+
+    <div class="code-box">
+      <textarea readonly>mkdir minecraft-bot && cd minecraft-bot</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+
+    <div class="code-box">
+      <textarea readonly>npm init -y
+npm install mineflayer</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="card">
+    <h2>Step 3 — Create Bot File</h2>
+
+    <div class="code-box">
+      <textarea readonly>nano mc-server.js</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+
+    <div class="code-box big">
+<textarea readonly>
+const mineflayer = require('mineflayer');
+
+const bot = mineflayer.createBot({
+  host: 'YOUR_SERVER_IP',
+  port: 25565,
+  username: 'TypeVC_Bot'
+});
+
+bot.on('login', () => {
+  console.log('Bot connected');
+  bot.chat('Hello from TypeVC Bot');
+});
+
+bot.on('chat', (username, message) => {
+  if (username === bot.username) return;
+
+  if (message === 'hi') bot.chat('Hi ' + username);
+  if (message === 'jump') {
+    bot.setControlState('jump', true);
+    setTimeout(() => bot.setControlState('jump', false), 800);
+  }
+});
+
+bot.on('end', () => console.log('Bot disconnected'));
+bot.on('error', err => console.log(err));
+</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+
+    <div class="code-box">
+      <textarea readonly>node mc-server.js</textarea>
+      <button onclick="copyCode(this)">Copy</button>
+    </div>
+  </div>
+
+  <!-- YOUTUBE -->
+  <div class="card center">
+    <h2>More Tutorials</h2>
+    <a class="btn outline" href="https://youtube.com/@Mr.TypeVC" target="_blank">
+      Mr.TypeVC on YouTube
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 • typeing.qzz.io
+</footer>
+
+<script src="mc-script.js"></script>
+</body>
+</html>
